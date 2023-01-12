@@ -1,4 +1,6 @@
-.friend_list {
+import styled from '@emotion/styled';
+
+export const FrendlyListUl = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -8,4 +10,4 @@
   width: 250px;
   margin-left: auto;
   margin-right: auto;
-}
+`;

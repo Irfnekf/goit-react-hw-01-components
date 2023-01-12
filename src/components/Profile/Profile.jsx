@@ -1,31 +1,41 @@
-import css from './Profile.module.css';
 import PropTypes from 'prop-types';
+import {
+  CardProfile,
+  Description,
+  AvatarProfile,
+  ProfileName,
+  ProfileTagLoc,
+  ProfileStats,
+  ProfileItems,
+  ProfileLabel,
+  ProfileQuantity,
+} from './Profile.styled';
 
 function Profile({ username, tag, location, avatar, stats }) {
   return (
-    <div className={css.profile}>
-      <div className={css.description}>
-        <img src={avatar} alt="User avatar" className={css.avatar} />
-        <p className={css.name}>{username}</p>
-        <p className={css.tag}>{tag}</p>
-        <p className={css.location}>{location}</p>
-      </div>
+    <CardProfile>
+      <Description>
+        <AvatarProfile src={avatar} alt="User avatar" />
+        <ProfileName>{username}</ProfileName>
+        <ProfileTagLoc>{tag}</ProfileTagLoc>
+        <ProfileTagLoc>{location}</ProfileTagLoc>
+      </Description>
 
-      <ul className={css.stats}>
-        <li>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{stats.followers}</span>
-        </li>
-        <li>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{stats.views}</span>
-        </li>
-        <li>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{stats.likes}</span>
-        </li>
-      </ul>
-    </div>
+      <ProfileStats>
+        <ProfileItems>
+          <ProfileLabel>Followers</ProfileLabel>
+          <ProfileQuantity>{stats.followers}</ProfileQuantity>
+        </ProfileItems>
+        <ProfileItems>
+          <ProfileLabel>Views</ProfileLabel>
+          <ProfileQuantity>{stats.views}</ProfileQuantity>
+        </ProfileItems>
+        <ProfileItems>
+          <ProfileLabel>Likes</ProfileLabel>
+          <ProfileQuantity>{stats.likes}</ProfileQuantity>
+        </ProfileItems>
+      </ProfileStats>
+    </CardProfile>
   );
 }
 
