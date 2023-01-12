@@ -1,7 +1,7 @@
 import css from '../FriendListItem/FriendListItem.module.css';
 import PropTypes from 'prop-types';
 
-export function FriendListItem({ avatar, name, isOnline }) {
+function FriendListItem({ avatar, name, isOnline }) {
   return (
     <li className={css.item}>
       <span className={isOnline ? css.online : css.offline}>{isOnline}</span>
@@ -15,3 +15,4 @@ FriendListItem.propTypes = {
   avatar: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
 };
+export default FriendListItem;
